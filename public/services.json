@@ -1,0 +1,44 @@
+[
+    {
+        "picture": "https://i.ibb.co/mvFCMXz/backhoeing.jpg",
+        "name": "Back Hoeing",
+        "service_id": "01",
+        "price": "55",
+        "description": "Call us for excavation and backhoe services because we are highly skilled at what we do, we offer the highest degree of customer satisfaction, we have almost two decades of experience in heavy equipment operation and we are properly insured, licensed and bonded."
+    },
+    {
+        "picture": "https://i.ibb.co/6Z2HtGD/burstcutting.webp",
+        "name": "Burst Cutting",
+        "service_id": "02",
+        "price": "45",
+        "description": "We are a leading company in the field of hydraulic bursting and controlled demolition services. We have over 35 years of experience in offering hydraulic bursting and crunching services in London, Kent and rest parts of the country. Hydraulic bursting is ideal for sites with space and noise restrictions."
+    },
+    {
+        "picture": "https://i.ibb.co/FYV4RjC/garden-maintenance.jpg",
+        "name": "Garden Maintenance",
+        "service_id": "03",
+        "price": "75",
+        "description": "We work hard to make sure that your garden is never a mess, even after a big storm. Our professional cleaners will come and tidy up your lawn, tidy up grass from flower beds and remove fallen leaves from flower beds with efficiency. Once they're done, they'll also check to see if there are any damages or extra cleaning required so that you can enjoy your garden without worrying about anything. The best part? With our services, we include 100% satisfaction guarantee! If for some reason you aren't happy with our Garden Cleaning service, we'll send out another team of garden maintenance professionals free of charge!"
+    },
+    {
+        "picture": "https://i.ibb.co/d2QvWZY/garden-planting.jpg",
+        "name": "Garden Planting",
+        "service_id": "04",
+        "price": "50",
+        "description": "Our Plant Doctors are on their way! We are a team of plant lovers, landscapers and agro-specialists who are there to make owning and keeping plants healthy easier for you. We are certified tree lovers who care for your plants. See how we can help"
+    },
+    {
+        "picture": "https://i.ibb.co/XSmwBzd/roof-gardening.jpg",
+        "name": "Roof Gardening",
+        "service_id": "05",
+        "price": "80",
+        "description": "Build your own Roof Garden. Our options vary from providing fresh food, temperature control,medicinal plants to decorative options - as per your requirement. Roof garden is essentially a garden on the rooftop of a building, man-made green spaces on the topmost level of residential and commercial structures. Consisting of different plants, these verdant areas help improve a building's aesthetics. Rooftop gardens have been in existence for a long time now."
+    },
+    {
+        "picture": "https://i.ibb.co/hMSgnq0/vertical-gardening.jpg",
+        "name": "Vertical Gardening",
+        "service_id": "06",
+        "price": "65",
+        "description": "If you are interested in our green wall design services, our experts will work with you to produce the right design. We can use many varieties and colors of plants to create specific designs. In vertical gardening, use structures or columnar trees to create garden rooms or define hidden spaces ready for discovery. Trellises, attached to the ground or to large containers, allow you to grow vines, flowers, and even vegetables in vertical garden pots using much less space than traditional gardening requires."
+    }
+]

@@ -21,7 +21,7 @@ const Header = () => {
                 </div>
                 <Link to='/' className="h-14 w-20 normal-case text-xl">
                     <div className='flex '>
-                        <img src={logo} alt="" srcset="" />
+                        <img src={logo} alt="" srcSet="" />
                         <p className='leading-none'><small>the</small><br className='' /><span className='text-2xl font-semibold'>GARDENER</span></p>
                     </div>
                 </Link>
@@ -32,7 +32,9 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <button className="btn btn-outline btn-accent">Sign Up</button>
+                <button className="btn btn-outline btn-accent">
+                    <Link to='/login'>Login</Link>
+                </button>
             </div>
         </div>
     );

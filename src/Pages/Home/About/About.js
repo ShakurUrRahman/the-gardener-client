@@ -3,7 +3,7 @@ import React from 'react';
 const About = () => {
     return (
         <div>
-            <div className="lg:min-h-screen flex flex-col items-center lg:flex-row my-16">
+            <div className="lg:min-h-screen flex flex-col items-center lg:flex-row my-5">
                 <div className='lg:w-1/2 mx-10 mb-5 lg:mb-0'>
                     <img alt='' src="https://i.ibb.co/55QTckv/markus-spiske-4-PG6w-Ll-Vag4-unsplash.jpg" className=" rounded-lg shadow-2xl " />
                 </div>
