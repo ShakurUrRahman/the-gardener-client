@@ -3,22 +3,23 @@ import { Link } from 'react-router-dom';
 import logo from '../.././assets/logo.png'
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
-const Login = () => {
-    const { login } = useContext(AuthContext);
 
-    const handleLogin = event => {
+const SignUP = () => {
+    const { createUser } = useContext(AuthContext)
+    const handleSignUp = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
 
-        login(email, password)
-            .them(result => {
+        createUser(email, password)
+            .then(result => {
                 const user = result.user;
                 console.log(user);
             })
-            .catch(error => console.error(error))
+            .catch(error => console.error(error));
     }
+
     return (
         <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
             <div className="w-full max-w-md space-y-8">
@@ -29,12 +30,26 @@ const Login = () => {
                         alt="Your Company"
                     />
                     <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-                        Sign in to your account
+                        Sign up for a new account
                     </h2>
                 </div>
-                <form onSubmit={handleLogin} className="mt-8 space-y-6" action="#" method="POST">
+                <form onSubmit={handleSignUp} className="mt-8 space-y-6" action="#" method="POST">
                     <input type="hidden" name="remember" defaultValue="true" />
                     <div className="-space-y-px rounded-md shadow-sm">
+                        <div>
+                            <label htmlFor="name" className="sr-only">
+                                Name
+                            </label>
+                            <input
+                                id="name"
+                                name="name"
+                                type="name"
+                                autoComplete="name"
+                                required
+                                className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                                placeholder="Name"
+                            />
+                        </div>
                         <div>
                             <label htmlFor="email-address" className="sr-only">
                                 Email address
@@ -64,21 +79,14 @@ const Login = () => {
                             />
                         </div>
                     </div>
-                    <div className="flex items-center justify-between">
-                        <div className="text-sm">
-                            <a href="/" className="font-medium text-indigo-600 hover:text-indigo-500">
-                                Forgot your password?
-                            </a>
-                        </div>
-                    </div>
                     <div>
-                        <input className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" type="submit" value="Login" ></input>
+                        <input className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" type="submit" value="Sign Up" ></input>
                     </div>
                 </form>
-                <p className='text-center'>New to <span className='font-semibold'>the GARDENER</span>? Please  <Link className='text-blue-700 font-bold' to='/signUp'>Sign Up</Link></p>
+                <p className='text-center'>Already have an account? Please  <Link className='text-blue-700 font-bold' to='/login'>Login</Link></p>
             </div>
         </div>
     )
 }
 
-export default Login;
+export default SignUP;
