@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Reviews = () => {
@@ -22,7 +23,7 @@ const Reviews = () => {
                         <p><small>Review of <span className='font-semibold font-serif'>{review.serviceName}</span></small></p>
                         <p>{review.userReview}</p>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Update Review</button>
+                            <Link to={`/reviews/${review._id}`}><button className="btn btn-primary">Update Review</button></Link>
                         </div>
                     </div>
                 </div>
