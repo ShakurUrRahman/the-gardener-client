@@ -1,10 +1,18 @@
-import React, { useContext } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Service = () => {
     const { name, picture, description, _id } = useLoaderData();
     const { user } = useContext(AuthContext);
+    const [reviews, setReviews] = useState([]);
+    // const { user } = useContext(AuthContext);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+            .then(res => res.json())
+            .then(data => setReviews(data))
+    }, [user?.email])
 
     const handlePlaceReview = event => {
         event.preventDefault();
@@ -23,7 +31,7 @@ const Service = () => {
             serviceName: name
         }
 
-        fetch('http://localhost:5000/reviews', {
+        fetch(`http://localhost:5000/reviews/${_id}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -43,7 +51,7 @@ const Service = () => {
     }
 
     return (
-        <div className="card lg:w-full mx-5 my-10">
+        <div><div className="card lg:w-full mx-5 my-10">
             <figure><img src={picture} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title underline">{name}</h2>
@@ -57,6 +65,23 @@ const Service = () => {
                         <input className='btn btn-primary' type="submit" value="Submit your review" />
                     </form>
                 </div>
+            </div>
+        </div>
+            <div className='m-10'>
+                {
+                    reviews.map(review => <div className="card card-side bg-base-100 shadow-xl mt-5 p-5">
+                        <figure><img className='w-10 h-10 rounded-full' src={review.photo} alt="" /></figure>
+                        <div className="card-body">
+                            <h2 className="card-title">{review.name}</h2>
+                            <p><small>Review of <span className='font-semibold font-serif'>{review.serviceName}</span></small></p>
+                            <p>{review.userReview}</p>
+                            <div className="card-actions justify-end">
+                                <Link to={`/reviews/${review._id}`}><button className="btn btn-primary">Update Review</button></Link>
+                            </div>
+                        </div>
+                    </div>
+                    )
+                }
             </div>
         </div>
     );

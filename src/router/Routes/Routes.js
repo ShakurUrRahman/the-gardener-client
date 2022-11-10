@@ -1,11 +1,11 @@
 import Main from "../../Layout/Main/Main";
+import AddService from "../../Pages/AllServices/AddService";
 import AllServices from "../../Pages/AllServices/AllServices";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Reviews from "../../Pages/Reviews/Reviews";
 import UpdateReview from "../../Pages/Reviews/UpdateReview";
 import Service from "../../Pages/Service/Serrvice";
-import Sertvice from "../../Pages/Service/Serrvice";
 import SignUp from "../../Pages/SignUp/SignUp";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -42,8 +42,13 @@ export const router = createBrowserRouter([
                 element: <Reviews></Reviews>
             },
             {
-                path: '/reviews/id:',
+                path: '/reviews/:id',
                 element: <UpdateReview></UpdateReview>
+            },
+            {
+                path: '/addService',
+                element: <AddService></AddService>,
+                loader: () => fetch('http://localhost:5000/allServices')
             }
         ]
     }
