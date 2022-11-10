@@ -8,8 +8,8 @@ const About = () => {
                     <img alt='' src="https://i.ibb.co/55QTckv/markus-spiske-4-PG6w-Ll-Vag4-unsplash.jpg" className=" rounded-lg shadow-2xl " />
                 </div>
                 <div className='lg:w-1/2 mx-10'>
-                    <h1 className="text-5xl font-bold">Box Office News!</h1>
-                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                    <h1 className="text-5xl font-bold">Our seeds project</h1>
+                    <p className="py-6">Best way to nurturing our products in a way so that it can be yours future</p>
                     <button className="btn btn-primary">Get Started</button>
                 </div>
             </div>

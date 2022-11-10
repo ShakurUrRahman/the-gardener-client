@@ -4,25 +4,25 @@ const features = [
     {
         name: 'Competitive exchange rates',
         description:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+            'We provide always quality with margin prize',
         icon: GlobeAltIcon,
     },
     {
         name: 'No hidden fees',
         description:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+            'We justify with our client',
         icon: ScaleIcon,
     },
     {
         name: 'Transfers are instant',
         description:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+            'No late to grow your future garden',
         icon: BoltIcon,
     },
     {
         name: 'Mobile notifications',
         description:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+            '24x7 customer and app connected with us',
         icon: ChatBubbleBottomCenterTextIcon,
     },
 ]
@@ -32,13 +32,11 @@ export default function Feature() {
         <div className="mb-12">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="lg:text-center">
-                    <h2 className="text-lg font-semibold text-indigo-600">Transactions</h2>
                     <p className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl">
-                        A better way to send money
+                        Why we are the best!
                     </p>
                     <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                        Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
-                        accusamus quisquam.
+                        Build your own Roof Garden. Our options vary from providing fresh food, temperature control,medicinal plants to decorative options - as per your requirement.
                     </p>
                 </div>
 

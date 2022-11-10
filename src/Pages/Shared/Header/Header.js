@@ -5,12 +5,27 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
 
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch();
+    }
 
     const menuItems = <>
         <li className='font-semibold'><Link to='/'>Home</Link></li>
-        {user?.email && <li className='font-semibold'><Link to='/reviews'>My Reviews</Link></li>}
-        <li className='font-semibold'><Link to='/addService'>Add a Service</Link></li>
+
+        {
+            user?.email ?
+                <>
+                    <li className='font-semibold'><Link to='/reviews'>My Reviews</Link></li>
+                    <li className='font-semibold'><Link to='/addService'>Add a Service</Link></li>
+                    <Link className='font-semibold btn btn-outline btn-accent' onClick={handleLogOut}>Logout</Link>
+                </>
+                :
+                <li className='font-semibold'>  <Link to='/login'><button className="btn btn-outline btn-accent">Log In</button></Link></li>
+        }
     </>
 
     return (
@@ -37,11 +52,6 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {user?.email ?
-                    <Link to='/login'><button className="btn btn-outline btn-accent">Logout </button></Link>
-                    :
-                    <Link to='/login'><button>Log In</button></Link>
-                }
             </div>
         </div>
     );

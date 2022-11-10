@@ -1,10 +1,27 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../.././assets/logo.png'
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
-    const { login } = useContext(AuthContext);
+    const { login, providerLogin } = useContext(AuthContext);
+
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const googleProvider = new GoogleAuthProvider();
+
+    const handleGoogleSignIn = () => {
+        providerLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.error(error))
+    }
+
+    const from = location.state?.from?.pathname || '/';
 
     const handleLogin = event => {
         event.preventDefault();
@@ -16,9 +33,12 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                navigate(from, { replace: true });
             })
             .catch(error => console.error(error))
     }
+
+
     return (
         <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
             <div className="w-full max-w-md space-y-8">
@@ -75,6 +95,7 @@ const Login = () => {
                         <input className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" type="submit" value="Login" ></input>
                     </div>
                 </form>
+                <div className='text-center'><p>Sign in with <Link onClick={handleGoogleSignIn} className='font-bold text-xl '>Google</Link></p></div>
                 <p className='text-center'>New to <span className='font-semibold'>the GARDENER</span>? Please  <Link className='text-blue-700 font-bold' to='/signUp'>Sign Up</Link></p>
             </div>
         </div>
