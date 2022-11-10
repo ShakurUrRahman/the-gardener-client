@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const AllServices = () => {
     const services = useLoaderData();
@@ -8,13 +10,15 @@ const AllServices = () => {
             {
                 services.map(service =>
                     <div className="card card-compact w-72 bg-base-100 shadow-xl mx-auto">
-                        <figure><img className='h-44 w-64 mt-10' src={service.picture} alt="Shoes" /></figure>
+                        <figure>
+                            <img className='h-44 w-64 mt-10' src={service.picture} alt="" />
+                        </figure>
                         <div className="card-body">
                             <h2 className="card-title">{service.name}</h2>
                             <p>{service.description.slice(0, 100) + '...'}</p>
                             <h2 className='text-xl font-semibold text-green-700'>Price: ${service.price}</h2>
                             <div className="card-actions justify-end">
-                                <Link to={`/service/${service._id}`}>
+                                <Link to={`/services/${service._id}`}>
                                     <button className="btn btn-primary">Details</button>
                                 </Link>
                             </div>

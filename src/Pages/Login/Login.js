@@ -13,7 +13,7 @@ const Login = () => {
         const password = form.password.value;
 
         login(email, password)
-            .them(result => {
+            .then(result => {
                 const user = result.user;
                 console.log(user);
             })
