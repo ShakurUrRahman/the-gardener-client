@@ -31,12 +31,12 @@ export const router = createBrowserRouter([
             {
                 path: '/allServices',
                 element: <AllServices></AllServices>,
-                loader: () => fetch('http://localhost:5000/allServices')
+                loader: () => fetch('https://the-gardener-server.vercel.app/allServices')
             },
             {
                 path: '/services/:id',
                 element: <Service></Service>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://the-gardener-server.vercel.app/services/${params.id}`)
             },
             {
                 path: '/reviews',
@@ -45,12 +45,12 @@ export const router = createBrowserRouter([
             {
                 path: '/reviews/:id',
                 element: <PrivateRoutes><UpdateReview></UpdateReview></PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:5000/reviews/${params.id}`)
+                loader: ({ params }) => fetch(`https://the-gardener-server.vercel.app/reviews/${params.id}`)
             },
             {
                 path: '/addService',
                 element: <PrivateRoutes><AddService></AddService></PrivateRoutes>,
-                loader: () => fetch('http://localhost:5000/allServices')
+                loader: () => fetch('https://the-gardener-server.vercel.app/allServices')
             }
         ]
     }

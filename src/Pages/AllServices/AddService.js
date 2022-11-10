@@ -22,7 +22,7 @@ const AddService = () => {
             price
         }
 
-        fetch('http://localhost:5000/allServices', {
+        fetch('https://the-gardener-server.vercel.app/allServices', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
